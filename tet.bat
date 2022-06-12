@@ -27,5 +27,5 @@ exit /b
 		set "name[%num%]=%~1"
 		set "value[%num%]=%~2"
 		shift & shift
-		if not "%~2"=="" ( goto :loop )	 
+		if not "%~2"=="" ( goto :loop )
 	exit /b
