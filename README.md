@@ -4,7 +4,7 @@ Batchfile utilities for me
 ## dhi.bat
 Directory bookmarking with fuzzy finder ( directory moving from list & list management )  
 
-require: any interactive filter tool ( like fuzzy finder, default is Heatseeker[hs] )  
+require: any interactive filter tool ( like fuzzy finder, default is [Heatseeker][hs] )  
 `dhi rm` require: [sd], [rw]  
 `dhi edit` require: `%EDITOR%` environment variable ( or set in this bat )
 ```sh
