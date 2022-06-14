@@ -1,6 +1,6 @@
 @echo off
 rem require: any interactive filter tool (like fuzzy finder)
-rem `dhi rem` require: sd, rw
+rem `dhi rm` require: sd, rw
 
 rem configure
 set "dirsfile=%USERPROFILE%\dirs.txt"
