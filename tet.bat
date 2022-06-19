@@ -11,10 +11,10 @@ if "%~1"=="" ( echo Usage: %~n0 ^<variable^>=^<string^> & exit /b )
 
 call :catchargs %*
 
-sd -s "{{ %~1 }}" "%~2" > "%tmpfile%"
+sd -s -- "{{ %~1 }}" "%~2" > "%tmpfile%"
 for /l %%i in (2,1,%num%) do (
 	rem in place modification is sd's default
-	sd -s "{{ !name[%%i]! }}" "!value[%%i]!" "%tmpfile%"
+	sd -s -- "{{ !name[%%i]! }}" "!value[%%i]!" "%tmpfile%"
 )
 
 type "%tmpfile%" & del "%tmpfile%"
