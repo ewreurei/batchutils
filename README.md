@@ -73,7 +73,7 @@ ghrel BurntSushi/ripgrep msvc
 ## tet.bat
 Minimum template expander ( just a replacer )  
 
-require: [sd], and use temp file  
+require: [sd]  
 Example:  
 ```sh
 echo Hi, {{ name }}! | tet name=John
