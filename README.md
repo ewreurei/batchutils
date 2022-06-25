@@ -100,7 +100,7 @@ echo https://example.com | toarg browser
 ```
 
 ## fuzzyarg.bat
-Similar to toarg, but use fuzzy finder to take out single line, from multiline stdin ( experimental )   
+Similar to toarg, but use fuzzy finder for take out single line, from multiline stdin ( experimental )  
 
 ## browser.bat
 Open URL in firefox private browsing  
@@ -112,7 +112,7 @@ echo https://example.com | toarg browser
 ```
 
 ## ayasii.bat
-More corrective japanese ( jokingly )  
+More correct japanese ( jokingly )  
 That is using [怪レい日本语ジェネレーター](https://correct-jp.vercel.app/)'s api  
 ```sh
 ayasii こんにちは 怪しい日本語ジェネレーター
