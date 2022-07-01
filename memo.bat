@@ -27,6 +27,7 @@ if "%~1"=="new" (
 	) else (
 		set "title=%~1%"
 	)
+	if "%title%"=="" ( exit /b )
 	set "filepath=%memodir%\%date:/=-%-%title: =-%.md"
 	type nul > %filepath%
 	%EDITOR% %filepath%
