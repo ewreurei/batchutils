@@ -1,8 +1,10 @@
 @echo off
 setlocal enabledelayedexpansion
-rem Experimental, and not maintained now
+rem Experimental and not perfect, intendedly
 set "memodir=C:\CLI\test\.memo"
-set "selcmd=hs -s"
+rem set "selcmd=hs -s "%~2""
+rem for CP932 environment:
+set "selcmd=nkf -w ^| hs -s "%~2" ^| nkf"
 set "previewcmd=cat"
 set "grepcmd=rg"
 
@@ -46,7 +48,7 @@ if "%~1"=="new" (
 	if exist "%filepath%" (
 		%EDITOR% "%filepath%"
 	) else  (
-		call :select "file" %~1
+		call :select "file"
 		if not "!file!"=="" ( %EDITOR% "%memodir%\!file!" )
 	)
 	exit /b
@@ -65,8 +67,8 @@ if "%~1"=="new" (
 	if exist "%filepath%" (
 		%previewcmd% "%filepath%"
 	) else (
-		call :select "file" %~1
-		%previewcmd% "%memodir%\!file!"
+		call :select "file"
+		if not "!file!"=="" ( %previewcmd% "%memodir%\!file!" )
 	)
 	exit /b
 
@@ -83,7 +85,7 @@ if "%~1"=="new" (
 
 rem Internal function
 :select
-	for /f "usebackq delims=" %%i in (`dir /b %memodir% ^| %selcmd% %2`) do (
+	for /f "usebackq delims=" %%i in (`dir /b %memodir% ^| %selcmd%`) do (
 		set "%~1=%%i"
 	)
 	exit /b
