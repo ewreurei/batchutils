@@ -111,14 +111,6 @@ browser example.com
 echo https://example.com | toarg browser
 ```
 
-## ayasii.bat
-More correct japanese ( jokingly )  
-That is using [怪レい日本语ジェネレーター](https://correct-jp.vercel.app/)'s api  
-```sh
-ayasii こんにちは 怪しい日本語ジェネレーター
-# ごんにさは 怪レい日本语ヅ卫礻レーター
-```
-
 ## memo.bat
 Toy clone of mattn/memo ( not maintained now )  
 
