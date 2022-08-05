@@ -1,7 +1,7 @@
 @echo off
 setlocal enabledelayedexpansion
 rem Experimental and not perfect, intendedly
-set "memodir=C:\CLI\test\.memo"
+set "memodir=%MEMOBATDIR%"
 rem set "selcmd=hs -s "%~2""
 rem for CP932 environment:
 set "selcmd=nkf -w ^| hs -s "%~2" ^| nkf"
