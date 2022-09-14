@@ -114,6 +114,24 @@ echo https://example.com | toarg browser
 ## memo.bat
 Toy clone of mattn/memo ( not maintained now )  
 
+## cg.bat
+Grep with color specifying, shorthand of running [ripgrep][rg] with `--colors` option  
+core logic:  
+```bat
+rg --colors "match:fg:%1"
+```
+Usage:  
+```
+Usage:
+    cg <color> <pattern>
+Available color list:
+    red, blue, green, cyan, magenta, yellow, white and black
+```
+Example:  
+```
+echo foobarbaz | cg blue foo
+```
+
 
 [sd]: https://github.com/chmln/sd
 [rw]: https://github.com/jridgewell/rw
