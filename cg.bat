@@ -7,7 +7,7 @@ if "%~2"=="" (
 	goto :usage
 )
 
-rg --colors match:fg:%*
+rg --color=always --colors match:fg:%*
 exit /b
 
 :usage
