@@ -128,8 +128,9 @@ Available color list:
     red, blue, green, cyan, magenta, yellow, white and black
 ```
 Example:  
-```
-echo foobarbaz | cg blue foo
+```sh
+echo foo bar baz | cg blue foo
+echo foo bar baz | cg blue foo | cg green bar | cg yellow baz
 ```
 
 
