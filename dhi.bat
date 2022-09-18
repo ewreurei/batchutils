@@ -27,7 +27,7 @@ rem --- END ---
 
 :add
 	findstr /x "%cd%" "%dirsfile%" > NUL
-	rem Equivalent to `||`, if not exist %cd% in file
+	rem Equivalent to `||`, if not exist %cd% in the file
 	if "%errorlevel%"=="1" (
 		cd >> "%dirsfile%"
 		echo Added this dir
@@ -36,7 +36,7 @@ rem --- END ---
 
 :remove
 	findstr /x "%cd%" "%dirsfile%" > NUL
-	rem Equivalent to `&&`, if exist %cd% in file
+	rem Equivalent to `&&`, if exist %cd% in the file
 	if "%errorlevel%"=="0" (
 		sd -p %cd:\=\\%\r\n "" "%dirsfile%" | rw "%dirsfile%"
 		echo Removed this dir
