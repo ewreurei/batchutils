@@ -22,20 +22,15 @@ require: nkf, [sd]
 Usage:
 ```
 Usage:
-    url [OPTION] <string>
+    url [OPTION] [FILE]
 Option:
     -d, --decode   Decode string
     -h, --help     Show this message
 ```
 Example:  
 ```sh
-url あいうえお
+echo あいうえお| url
 # %E3%81%82%E3%81%84%E3%81%86%E3%81%88%E3%81%8A
-echo あいうえお| toarg url
-# %E3%81%82%E3%81%84%E3%81%86%E3%81%88%E3%81%8A
-
-# if using external binary's echo (like uutils/coreutils)
-@echo あいうえお| toarg url
 ```
 
 ## rhqd.bat

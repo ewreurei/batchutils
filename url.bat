@@ -11,33 +11,36 @@ if "%~1"=="-d" (
 	goto :usage
 ) else if "%~1"=="--help" (
 	goto :usage
-) else if "%~1"=="" (
-	goto :noargs
 ) else (
 	goto :encode
 )
 
 :encode
-	echo %*| nkf -wMQ | sd "=" "%%" | sd "%%\r\n" ""
+	set "cmd=nkf -wMQ | sd "=" "%%" | sd "%%\r\n" """
+	if "%~1"=="" (
+		%cmd%
+	) else if "%~1"=="-" (
+		%cmd%
+	) else (
+		type "%~1"| %cmd%
+	)
 	exit /b
 
 :decode
-	echo %*| sd "(-d|--decode)\s" "" | sd "%%" "=" | nkf -WmQ
-	exit /b
-
-:noargs
-	rem エラー：引数にエンコードする文字列を指定してください
-	rem 書式
-	echo ERROR: Please specify encoding text from arguments
-	echo Format:
-	echo     url [-d^|--decode] ^<string^>
-	echo/
-	echo for more info, try `--help`
+	rem set "cmd=sd "%%" "=" | nkf -WmQ"
+	set "cmd=nkf --url-input"
+	if "%~2"=="" (
+		%cmd%
+	) else if "%~2"=="-" (
+		%cmd%
+	) else (
+		type "%~2"| %cmd%
+	)
 	exit /b
 
 :usage
 	echo Usage:
-	echo     url [OPTION] ^<string^>
+	echo     url [OPTION] [FILE]
 	echo Option:
 	echo     -d, --decode   Decode string
 	echo     -h, --help     Show this message
