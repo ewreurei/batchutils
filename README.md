@@ -2,11 +2,11 @@
 Batchfile utilities for me
 
 ## dhi.bat
-Directory bookmarking with fuzzy finder ( directory moving from list & list management )  
+Directory bookmarking with fuzzy finder (directory moving from list & list management)  
 
-require: any interactive filter tool ( like fuzzy finder, default is [Heatseeker][hs] )  
+require: any interactive filter tool (like fuzzy finder, default is [Heatseeker][hs])  
 `dhi rm` require: [sd], [rw]  
-`dhi edit` require: `%EDITOR%` environment variable ( or set in this bat )
+`dhi edit` require: `%EDITOR%` environment variable (or set in this bat)
 ```sh
 dhi        # pushd from `cat listfile.txt | fuzzy`
 dhi add    # add %cd% (like pwd) to list
@@ -36,29 +36,29 @@ echo あいうえお| url
 ## rhqd.bat
 cd to [rhq] managed directory  
 
-require: [rhq], tr(can replace with sd), cut, any interactive filter tool ( set `%SELCMD%` in/out of this bat )  
+require: [rhq], tr(can replace with sd), cut, any interactive filter tool (set `%SELCMD%` in/out of this bat)  
 
 ## ghs.bat
 Github repository searching, printout repo's name & description  
-Using Github api, but not support api token yet ( and not planned now )  
+Using Github api, but not support api token yet (and not planned now)  
 
-require: toenv.bat, url.bat, [sd], [rg], [xq][] ( that is one of jq clone )  
+require: toenv.bat, url.bat, [sd], [rg], [xq][] (that is one of jq clone)  
 Demo:  
 
 ![ScreenShot](https://i.imgur.com/IIgH9Cg.png)
 
 ## ghrel.bat
 Github release URL getter, use fuzzy finder to select assets  
-Specify repository name from arguments ( user/name format )  
+Specify repository name from arguments (user/name format)  
 
 These error handling is not good, and behavior is dependent on Heatseeker's that  
-( if query is empty, ignore query specify option )  
+(if query is empty, ignore query specify option)  
 
-require: [xq], [teip], [hs], [sd], head ( just in case for my use case, removable )  
+require: [xq], [teip], [hs], [sd], head (just in case for my use case, removable)  
 Example:  
 ```sh
 ghrel BurntSushi/ripgrep
-# ( selecting...)
+# (selecting...)
 # https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep-13.0.0-x86_64-pc-windows-msvc.zip
 
 # Set initial selecting query
@@ -66,7 +66,7 @@ ghrel BurntSushi/ripgrep msvc
 ```
 
 ## tet.bat
-Minimum template expander ( just a replacer )  
+Minimum template expander (just a replacer)  
 
 require: [sd]  
 Example:  
@@ -86,7 +86,7 @@ piped command:
 ```
 
 ## toarg.bat
-Stdin to command arg ( for only oneline )  
+Stdin to command arg (for only oneline)  
 If argument is empty, just exec stdin as a command  
 
 Example:  
@@ -95,7 +95,7 @@ echo https://example.com | toarg browser
 ```
 
 ## fuzzyarg.bat
-Similar to toarg, but use fuzzy finder for take out single line, from multiline stdin ( experimental )  
+Similar to toarg, but use fuzzy finder for take out single line, from multiline stdin (experimental)  
 
 ## browser.bat
 Open URL in firefox private browsing  
@@ -107,7 +107,7 @@ echo https://example.com | toarg browser
 ```
 
 ## memo.bat
-Toy clone of mattn/memo ( not maintained now )  
+Toy clone of mattn/memo (not maintained now)  
 
 ## cg.bat
 Grep with color specifying, shorthand of running [ripgrep][rg] with `--colors` option  
