@@ -1,7 +1,6 @@
 @echo off
 setlocal
 rem require: nkf(for Win), sd
-rem ‚È‚ñ‚Æ‚È‚­‚»‚ê‚Á‚Û‚­‚µ‚æ‚¤‚©‚Æ‰pŒê‚É‚µ‚Ä‚İ‚½‚¯‚ÇA‚½‚Ô‚ñ•K—v«‚ÍŠF–³....
 rem argparse:
 if "%~1"=="-d" (
 	goto :decode
