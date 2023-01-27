@@ -15,6 +15,17 @@ dhi list   # printout directory list file
 dhi edit   # edit directory list file
 ```
 
+## after.bat
+Preview changes after do command to file  
+
+require: [sd], cat (no deeper reason, so `type` and `@type %*` is maybe ok)  
+```sh
+# Default is `diff` but can use other command
+set "DIFFCMD=delta"
+# You can see only differences ;)
+after foo.txt -- sd foo bar
+```
+
 ## url.bat
 URL encode from argument text  
 
